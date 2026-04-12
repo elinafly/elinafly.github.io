@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research — Elina Ishmukhametova</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .paper {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .paper-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .paper-title {
+      font-weight: 500;
+      font-size: 0.97rem;
+    }
+
+    .paper-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .toggle-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--lavender-dark);
+      padding: 2px 6px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+
+    .toggle-btn:hover { color: var(--lavender); }
+
+    .toggle-btn svg {
+      transition: transform 0.25s ease;
+    }
+
+    .toggle-btn.open svg {
+      transform: rotate(180deg);
+    }
+
+    .abstract {
+      display: none;
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: var(--bg-card);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .abstract.open { display: block; }
+
+    .paper-footer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-name" href="index.html">Elina Ishmukhametova</a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html" class="active">Research</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Page ── -->
+  <main class="page">
+
+
+
+    <div class="section-label">Research</div>
+
+    <!-- ── Working Papers ── -->
+    <h2 class="section-title">Working Papers</h2>
+
+    <div class="paper">
+      <div class="paper-header">
+        <div>
+          <p class="paper-title">The Problem of Reputation Reliability in Online Freelance Markets <span class="paper-meta" style="font-size: 0.85rem;">— with Marina Sandomirskaia</span></p>
+          <p class="paper-meta">HSE Working Paper WP BRP 260/EC/2023</p>
+        </div>
+        <button class="toggle-btn" onclick="toggleAbstract(this)">View abstract <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+      </div>
+      <div class="abstract">
+        This paper explains how the problem of reputation credibility may arise in online
+        freelance markets, as clients often complain about the quality of the completed work
+        irrespective of the price and the rating of the worker. We develop a dynamic signaling
+        model of falsified reputation purchase by low-skilled freelancers, focusing on a
+        semi-separating equilibrium in every period. The main result states that when the
+        costs of purchasing reputation are high, only the maximum rating is bought. This
+        is due to low-skilled freelancers wanting to be chosen by clients in order to recoup
+        their losses. When the costs are low, a variety of reputations are observed, but the
+        reputation mechanism is not credible and adds little new information to prices.
+      </div>
+      <div class="paper-footer">
+        <div class="card-tags">
+          <span class="tag">Reputation</span>
+          <span class="tag">Online Markets</span>
+          <span class="tag">Signaling</span>
+          <span class="tag">Experiment</span>
+        </div>
+        <a href="papers/260EC2023.pdf" class="btn btn-primary" style="padding: 6px 18px; font-size: 0.8rem; margin-left: auto;" target="_blank" rel="noopener">PDF</a>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ── Work in Progress ── -->
+    <h2 class="section-title">Work in Progress</h2>
+
+    <div class="paper">
+      <div class="paper-header">
+        <p class="paper-title">Can I Trust the AI? Delegating Decisions Under Uncertainty About Preference Alignment <span class="paper-meta" style="font-size: 0.85rem;">— with Vincent Lenglin</span></p>
+        <button class="toggle-btn" onclick="toggleAbstract(this)">View abstract <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+      </div>
+      <div class="abstract">
+        The increasing integration of AI into decision-making raises an important question: do individuals
+        perceive human and artificial agents as making different types of errors when deciding
+        on their behalf? While prior research has focused on delegation behavior and trust, individuals'
+        underlying beliefs about decision errors are rarely measured directly. This study elicits subjective
+        beliefs about the likelihood and nature of errors made by human and AI decision-makers and
+        examines how these beliefs shape willingness to delegate. In a within-subject experiment, participants
+        choose between making decisions themselves, delegating to another human, or delegating to
+        an AI (ChatGPT) in a risky lottery setting with potential preference misalignment. Willingness
+        to pay (WTP) for each option is elicited using a multiple price list. Participants also report their
+        beliefs about each agent's likelihood of selecting different options, allowing us to link perceived
+        error patterns to delegation preferences. The study provides direct evidence on how beliefs about
+        human versus AI errors influence delegation decisions.
+      </div>
+      <div class="paper-footer">
+        <div class="card-tags">
+          <span class="tag">Algorithm Delegation</span>
+          <span class="tag">Trust</span>
+          <span class="tag">Uncertainty</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-header">
+        <p class="paper-title">An Experimental Investigation of Algorithm Delegation for Choice Tasks <span class="paper-meta" style="font-size: 0.85rem;">— with Fabrice Le Lec and Vincent Lenglin</span></p>
+        <button class="toggle-btn" onclick="toggleAbstract(this)">View abstract <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+      </div>
+      <div class="abstract">
+        Whether individuals are willing to delegate decisions to algorithms is central to understanding
+        the economic implications of artificial intelligence. This question bears directly on how AI may
+        reshape economic behavior, organizational efficiency, and market outcomes. In this paper, we provide
+        experimental evidence on individuals' attitudes toward algorithmic delegation, shedding light
+        on the behavioral foundations of algorithmic adoption. Our contribution is threefold. First, we
+        study delegation in choice tasks—decisions reflecting preferences under risk—rather than the judgment
+        or prediction tasks that dominate the existing literature. This distinction matters because
+        delegation in choice contexts raises concerns about autonomy and responsibility rather than factual
+        accuracy. Second, we elicit preferences across three decision modes: self-decision, delegation
+        to another human, and delegation to an algorithm, allowing us to distinguish algorithm-specific
+        aversion from general delegation aversion. Finally, we hold constant the performance accuracy
+        across all conditions, isolating preferences toward the source of delegation from differences in expected
+        performance. Our results are unambiguous: we find no statistically significant preference
+        for self-decision relative to either human or algorithmic delegation. Taken together with prior evidence,
+        our results suggest that experimentally documented algorithm aversion primarily reflects
+        pessimistic beliefs about algorithmic performance rather than intrinsic resistance to delegating
+        decisions to algorithms.
+      </div>
+      <div class="paper-footer">
+        <div class="card-tags">
+          <span class="tag">Algorithm Aversion</span>
+          <span class="tag">Decision Rights</span>
+          <span class="tag">Lab Experiment</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- HIDDEN (work in progress, not ready to share)
+    <div class="paper">
+      <div class="paper-header">
+        <p class="paper-title">The Carbon Cost of Accuracy: Measuring Trade-offs in AI Delegation</p>
+        <button class="toggle-btn" onclick="toggleAbstract(this)">View abstract <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+      </div>
+      <div class="abstract">
+        Examining the environmental trade-offs of relying on AI systems for decision-making,
+        measuring how accuracy gains from delegation weigh against energy costs.
+      </div>
+      <div class="paper-footer">
+        <div class="card-tags">
+          <span class="tag">AI</span>
+          <span class="tag">Environmental Economics</span>
+          <span class="tag">Trade-offs</span>
+        </div>
+      </div>
+    </div>
+    -->
+
+
+  </main>
+
+  <script>
+    function toggleAbstract(btn) {
+      const abstract = btn.closest('.paper').querySelector('.abstract');
+      const isOpen = abstract.classList.toggle('open');
+      btn.classList.toggle('open', isOpen);
+      btn.childNodes[0].textContent = isOpen ? 'Hide abstract' : 'View abstract';
+    }
+  </script>
+
+</body>
+</html>

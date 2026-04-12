@@ -1,0 +1,448 @@
+/* ──────────────────────────────────────────
+   Fonts & Reset
+────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ──────────────────────────────────────────
+   Tokens
+────────────────────────────────────────── */
+:root {
+  --bg:            #FDFCFF;
+  --bg-card:       #F2EDF9;
+  --bg-card-hover: #EAE2F4;
+  --lavender:      #9B84C8;
+  --lavender-dark: #6B5594;
+  --lavender-pale: #E4DCF2;
+  --text:          #2C2438;
+  --text-muted:    #7B6E8A;
+  --border:        #DDD5ED;
+  --radius-card:   16px;
+  --radius-pill:   50px;
+  --max-w:         780px;
+  --nav-h:         68px;
+}
+
+/* ──────────────────────────────────────────
+   Base
+────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'DM Serif Display', serif;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+a {
+  color: var(--lavender-dark);
+  text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
+/* ──────────────────────────────────────────
+   Navigation
+────────────────────────────────────────── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(253, 252, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+}
+
+.nav-inner {
+  width: 100%;
+  max-width: calc(var(--max-w) + 80px);
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.nav-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15rem;
+  color: var(--text);
+  white-space: nowrap;
+  text-decoration: none;
+}
+.nav-name:hover { text-decoration: none; color: var(--lavender-dark); }
+
+.nav-links {
+  display: flex;
+  gap: 6px;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  background: var(--lavender-pale);
+  color: var(--lavender-dark);
+  text-decoration: none;
+}
+
+.nav-links a.active {
+  background: var(--lavender);
+  color: #fff;
+}
+
+/* ──────────────────────────────────────────
+   Page wrapper
+────────────────────────────────────────── */
+.page {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 64px 40px 96px;
+}
+
+/* ──────────────────────────────────────────
+   Section titles
+────────────────────────────────────────── */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lavender);
+  margin-bottom: 10px;
+}
+
+.page-title {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.page-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 48px;
+  max-width: 560px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ──────────────────────────────────────────
+   Buttons
+────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--lavender);
+  color: #fff;
+  border: none;
+}
+.btn-primary:hover {
+  background: var(--lavender-dark);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(107, 85, 148, 0.25);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--lavender-dark);
+  border: 1.5px solid var(--lavender);
+}
+.btn-outline:hover {
+  background: var(--lavender-pale);
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(107, 85, 148, 0.12);
+}
+
+/* ──────────────────────────────────────────
+   Cards
+────────────────────────────────────────── */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  padding: 28px 32px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  background: var(--bg-card-hover);
+  box-shadow: 0 6px 24px rgba(107, 85, 148, 0.09);
+}
+
+.card-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.card-meta {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--lavender);
+  margin-bottom: 8px;
+}
+
+.card-body {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tag {
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--lavender-pale);
+  color: var(--lavender-dark);
+}
+
+/* ──────────────────────────────────────────
+   Divider
+────────────────────────────────────────── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 48px 0;
+}
+
+/* ──────────────────────────────────────────
+   About / Hero
+────────────────────────────────────────── */
+.about-hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  margin-bottom: 56px;
+}
+
+.about-avatar {
+  flex-shrink: 0;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: var(--lavender-pale);
+  border: 3px solid var(--lavender);
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lavender);
+  font-size: 3rem;
+  overflow: hidden;
+}
+
+.about-avatar-placeholder {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: var(--lavender-pale);
+  border: 3px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about-avatar-placeholder svg {
+  width: 64px;
+  height: 64px;
+  color: var(--lavender);
+  fill: var(--lavender);
+  opacity: 0.5;
+}
+
+.about-text h1 {
+  font-size: 2.6rem;
+  margin-bottom: 4px;
+}
+
+.about-role {
+  font-size: 1rem;
+  color: var(--lavender-dark);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.about-institution {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.about-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ──────────────────────────────────────────
+   CV
+────────────────────────────────────────── */
+.cv-section {
+  margin-bottom: 48px;
+}
+
+.cv-entry {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 0 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.cv-year {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  padding-top: 2px;
+}
+
+.cv-entry-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.cv-entry-sub {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ──────────────────────────────────────────
+   Teaching
+────────────────────────────────────────── */
+.course-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.course-name {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.course-detail {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ──────────────────────────────────────────
+   Contact
+────────────────────────────────────────── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.contact-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 24px 28px;
+}
+
+.contact-item-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lavender);
+  margin-bottom: 6px;
+}
+
+.contact-item-value {
+  font-size: 0.95rem;
+  color: var(--text);
+  word-break: break-all;
+}
+
+/* ──────────────────────────────────────────
+   Responsive
+────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .page { padding: 40px 24px 72px; }
+
+  .nav-inner { padding: 0 20px; }
+
+  .about-hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 28px;
+  }
+
+  .about-links { justify-content: center; }
+
+  .about-text h1 { font-size: 2rem; }
+
+  .cv-entry {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .contact-grid { grid-template-columns: 1fr; }
+
+  .course-row { flex-direction: column; gap: 4px; }
+}
