@@ -58,16 +58,17 @@ a:hover { text-decoration: underline; }
 /* ──────────────────────────────────────────
    Navigation
 ────────────────────────────────────────── */
-nav {
+.site-nav {
   position: sticky;
   top: 0;
   z-index: 100;
   background: rgba(253, 252, 255, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
-  height: var(--nav-h);
+  min-height: var(--nav-h);
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .nav-inner {
